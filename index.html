@@ -1,7 +1,344 @@
-<p>Online Scene CAD Recomposition via Autonomous Scanning</p>
-<p>我是chLi，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<!DOCTYPE html>
+<html>
 
-<ul>
-  <li> <a href="https://565353780.github.io">Github Homepage</a> </li>
-</ul>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <title>Online Scene CAD Recomposition via Autonomous Scanning</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script type="text/javascript">
+    google.load("jquery", "1.3.2");
+  </script>
+  <style type="text/css">
+    body {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 1100px;
+    }
+
+    h1 {
+      font-weight: 300;
+    }
+
+    a:link {
+      text-decoration: none;
+      color: 6464FF
+    }
+
+    a:active {
+      text-decoration: blink
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: 6464FF
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: 551A8B
+    }
+  </style>
+
+
+  <!--------------------------------------------------------------------------------------------------->
+  <!--                                       Header and Photo                                       --->
+  <!--------------------------------------------------------------------------------------------------->
+
+<body data-gr-c-s-loaded="true">
+  <font size="3">
+    <blockquote>
+      <p>
+      </p>
+      <center>
+        <table border="0">
+          <tbody>
+            <tr>
+              <td width="30"></td>
+              <td width="1200">
+                <center>
+
+                  <!--Header-->
+                  <br><br><br>
+                  <h1><span style="font-size: 25pt">Online Scene CAD Recomposition via Autonomous Scanning</span></h1>
+                  <br>
+
+                  <p class="authors">
+                    <span style="font-size: 15pt">
+                      <a href="https://565353780.github.io/">Changhao Li</a><sup>1</sup>&nbsp&nbsp
+                      Junfu Guo</a><sup>1</sup>&nbsp&nbsp
+                      <a href="https://csse.szu.edu.cn/staff/ruizhenhu/">Ruizhen Hu</a><sup>2</sup> &nbsp
+                      <a href="http://staff.ustc.edu.cn/~lgliu/">Ligang Liu</a><sup>1</sup> &nbsp
+
+                      <br><br>
+                      <sup>1</sup> <a href="http://en.ustc.edu.cn/">University of Science and Technology of China</a>
+                      &nbsp&nbsp&nbsp
+                      <sup>2</sup> <a href="https://en.szu.edu.cn/">Shenzhen University</a>
+                      &nbsp&nbsp&nbsp
+
+                      <br><br>
+                      <h3 class=""><span style="font-weight: normal;"><a href="https://asia.siggraph.org/2023/">SIGGRAPH
+                            Asia 2023</a>, technical paper</span></h3>
+                    </span>
+                  <p class="authors">&nbsp;</p>
+                </center>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </center>
+      <p></p>
+
+
+      <!-- Figure 1: Overview-->
+      <br>
+      <div align="center">
+        <img src="./images/teaser-v8.pdf" width="880" alt="Figure 1">
+      </div>
+      <div align="justify" width: 1200px>
+        <p class="figure">
+          <strong>Figure 1:</strong> With the rough reconstruction (left) based on spare viewpoints selected via
+          autonomous scanning (middle), our scene CAD recomposition result (right) can faithfully reflect the object
+          geometry and arrangement in the given scene.
+          Note that the corresponding CAD models are retrieved and their relative poses are optimized online with the
+          few automatically optimized scanning viewpoint, even though the scene is only partially reconstructed.
+        </p>
+      </div>
+
+      <!--------------------------------------------------------------------------------------------------->
+      <!--                                            Abstract                                          --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <br>
+      <hr><br>
+      <div align="justify" width: 1200px>
+
+        <h1>Abstract</h1>
+
+        <span style="font-size: 13pt">
+          <!--<ul>-->
+          Autonomous surface reconstruction of 3D scenes has been intensely studied in recent years, however, it is
+          still difficult to accurately reconstruct all the surface details of complex scenes with complicated object
+          relations and severe occlusions, which makes the reconstruction results not suitable for direct use in
+          applications such as gaming and virtual reality. Therefore, instead of reconstructing the detailed surfaces,
+          we aim to recompose the scene with CAD models retrieved from a given dataset to faithfully reflect the object
+          geometry and arrangement in the given scene. Moreover, unlike most of the previous works on scene CAD
+          recomposition requiring an offline reconstructed scene or capture video as input, which leads to significant
+          data redundancy, we proposed a novel online scene CAD recomposition method with autonomous scanning, which
+          efficiently recomposes the scene with the guidance of automatically optimized Next-Best-View (NBV) in a single
+          online scanning pass. Based on the key observation that spatial relation in the scene can not only constrain
+          the object pose and layout optimization but also guide the NBV generation, our system consists of two key
+          modules: relation-guided CAD recomposition module that uses relation-constrained global optimization to get
+          accurate object pose and layout estimation, and relation-aware NBV generation module that makes the
+          exploration during the autonomous scanning tailored for our composition task. Extensive experiments have been
+          conducted to show the superiority of our method over previous methods in scanning efficiency and retrieval
+          accuracy as well as the importance of each key component of our method.
+        </span>
+      </div>
+
+      <BR><BR>
+
+
+
+
+      <!--------------------------------------------------------------------------------------------------->
+      <!--                                            Download                                          --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+
+      <div align="justify">
+
+        <h1>Download </h1>
+
+        <span style="font-size: 13pt; line-height:32px">
+          <a href="paper/AutoScan2CAD.pdf">paper</a>(~34M) <BR>
+          <a href="paper/AutoScan2CAD_supplementary.pdf">supplementary material</a>(~21M) <BR>
+          <a href="https://github.com/565353780/auto-scan2cad">code</a> <BR>
+          Slide </a>(coming soon) <BR>
+        </span>
+
+      </div>
+
+      <BR><BR>
+
+
+      <!-------------------------------------------- ------------------------------------------------------->
+      <!--                                             Video                                           --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+
+      <h1>Video (Coming Soon)</h1>
+
+      <div id="Div3" align="center">
+
+        <iframe width="560" height="315" src="https://www.youtube.com/" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+
+      <BR><BR><BR>
+
+      <!-- Video -->
+
+
+      <!-------------------------------------------- ------------------------------------------------------->
+      <!--                                             Talk                                           --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+
+      <h1>Talk </h1>
+      <span style="font-size: 13pt">
+        The video will be uploaded after the conference.
+        <!--<ul>-->
+      </span>
+      </div>
+
+      <BR><BR><BR>
+
+
+      <!--------------------------------------------------------------------------------------------------->
+      <!--                                            Results                                           --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+
+      <div align="justify">
+
+        <h1>Results </h1>
+
+        <BR>
+        <div align="center"><img src="./images/eval-offline-compare-000001-v6.png" width="880" alt="Figure 2"></div>
+        <p class="figure">
+          <strong>Figure 2:</strong> Qualitative comparison with offline CAD recomposition baselines, including <a
+            href="https://github.com/skanti/Scan2CAD">Scan2CAD</a>, <a
+            href="https://github.com/skanti/SceneCAD">SceneCAD</a> and <a
+            href="https://github.com/hmz-15/Interactive-Scene-Reconstruction">Interactive Scene Reconstruction</a>, with
+          either manual scans(+M) provided in the <a href="http://www.scan-net.org/">ScanNet</a> dataset or autonomous
+          scans(+A) generated by our method as input.
+        </p>
+        <BR><BR>
+
+        <div align="center"><img src="./images/eval-online-compare-065300-v5.png" width="880" alt="Figure 3"></div>
+        <p class="figure">
+          <strong>Figure 3:</strong> Qualitative comparison with online CAD recomposition baselines <a
+            href="https://cangumeli.github.io/ROCA/">ROCA</a>+RelNBV and RelCAD+<a
+            href="https://guojunfu-tech.github.io/AsyncScan/">AsyncScan</a>. In the first row, we show the fusion of all
+          captured RGBD scans with the sequence of NBVs generated by each method, where the initial view is colored in
+          blue.
+        </p>
+        <BR><BR>
+
+        <div align="center"><img src="./images/eval-visual-result-v7.pdf" width="880" alt="Figure 4"></div>
+        <p class="figure">
+          <strong>Figure 4:</strong> Example results generated by our online scene CAD recomposition method, with the
+          corresponding virtual scene shown on the left.
+        </p>
+        <BR><BR>
+
+      </div>
+
+      <BR>
+
+
+      <!--------------------------------------------------------------------------------------------------->
+      <!--                                        Acknowledgments                                       --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+
+      <div align="justify">
+
+        <h1>Acknowledgments </h1>
+
+        <p class="text">
+          <span style="font-size: 13pt; line-height:22px">
+            We thank the anonymous reviewers for their valuable comments. This work is supported by the
+            National Key R\&D Program of China (2022YFB3303400),
+            National Natural Science Foundation of China (62025207, 62322207),
+            Shenzhen Science and Technology Program (RCYX20210609103121030),
+            and GD Natural Science Foundation (2021B1515020085).
+          </span>
+        </p>
+      </div>
+
+      <BR><BR>
+
+
+
+      <!--------------------------------------------------------------------------------------------------->
+      <!--                                        Bibtex                                       --->
+      <!--------------------------------------------------------------------------------------------------->
+
+      <hr>
+
+      <div align="justify">
+
+        <h1>Bibtex </h1>
+        <table style="font-size: 13pt; line-height:30px" align="left">
+          <caption></caption>
+          <tr>
+            <td>@</td>
+            <td>article{</td>
+            <td></td>
+            <td> Li-2023-AutoScan2CAD,</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>title</td>
+            <td>=</td>
+            <td> {Online Scene CAD Recomposition via Autonomous Scanning},
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>author</td>
+            <td>=</td>
+            <td> {Changhao Li, Junfu Guo, Ruizhen Hu, Ligang Liu},</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>journal</td>
+            <td>=</td>
+            <td> {ACM Transactions on Graphics (SIGGRAPH Asia 2023)},</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>volume</td>
+            <td>=</td>
+            <td> {42},</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>number</td>
+            <td>=</td>
+            <td> {6},</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>pages</td>
+            <td>=</td>
+            <td> {?:1 -- ?:16},</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>year</td>
+            <td>=</td>
+            <td> {2023}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <BR><BR><BR><BR>
+
+
+      <!----------------------------CopyRight---------------------------->
+
+    </blockquote>
+  </font>
+
+</html>
